@@ -1,0 +1,12 @@
+
+services:
+  # Aplicação FastAPI
+  api:
+    build: .
+    container_name: marvel_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Volume para desenvolvimento (hot reload)
+      - .:/app
+    restart: unless-stopped
